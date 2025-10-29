@@ -1,1 +1,8 @@
-{\n  "name": "Electron Devcontainer (noVNC)",\n  "build": {\n    "dockerfile": "Dockerfile",\n    "context": "."\n  },\n  "forwardPorts": [3000, 9222, 6080],\n  "postCreateCommand": "chmod +x /usr/local/bin/run-vnc.sh && /usr/local/bin/run-vnc.sh & npm ci",\n  "remoteUser": "vscode",\n  "customizations": {\n    "vscode": {\n      "extensions": [\n        "dbaeumer.vscode-eslint",\n        "esbenp.prettier-vscode",\n        "ms-vscode.vscode-typescript-next",\n        "msjsdiag.debugger-for-chrome"\n      ]\n    }\n  },\n  "workspaceFolder": "/workspace",\n  "mounts": ["source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"]\n}
+{
+  "name": "personal-os-ui",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {},
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000],
+  "remoteUser": "node"
+}
