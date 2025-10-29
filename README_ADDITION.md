@@ -1,0 +1,1 @@
+# Devcontainer for Electron + React UI\n\nThis adds a devcontainer that runs Xvfb, fluxbox, x11vnc and noVNC so you can run Electron GUI inside Codespaces and view it via a web VNC client on port 6080.\n\nUsage:\n- Open Codespace -> let devcontainer build\n- Forward port 6080 in Codespaces UI and open the forwarded URL\n- Inside the container: npm ci && npm run electron:dev

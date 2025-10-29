@@ -1,0 +1,1 @@
+// 필요한 경우 ipc, 노드 API 노출 등을 여기에 설정하세요.\nwindow.addEventListener('DOMContentLoaded', () => {\n  // preload 예시\n});
