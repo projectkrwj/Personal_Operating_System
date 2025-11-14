@@ -8,13 +8,13 @@ export default function TitleBar() {
     <div className="w-full h-10 bg-gray-900 flex justify-end items-center select-none">
       <button
         className="px-4 py-1 text-white hover:bg-gray-700"
-        onClick={minimize}
+        onClick={() => window.electronAPI.minimize()}
       >
         –
       </button>
       <button
         className="px-4 py-1 text-white hover:bg-red-600"
-        onClick={close}
+        onClick={() => window.electronAPI.close()}
       >
         ×
       </button>
