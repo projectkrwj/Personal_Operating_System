@@ -1,23 +1,23 @@
-import { ipcRenderer } from "electron";
-
 export default function TitleBar() {
-  const minimize = () => ipcRenderer.send("window-minimize");
-  const close = () => ipcRenderer.send("window-close");
-
   return (
-    <div className="w-full h-10 bg-gray-900 flex justify-end items-center select-none">
-      <button
-        className="px-4 py-1 text-white hover:bg-gray-700"
-        onClick={() => window.electronAPI.minimize()}
-      >
-        –
-      </button>
-      <button
-        className="px-4 py-1 text-white hover:bg-red-600"
-        onClick={() => window.electronAPI.close()}
-      >
-        ×
-      </button>
+    <div
+      className="w-full h-10 bg-gray-900 flex items-center"
+      style={{ WebkitAppRegion: "drag" }} // 이 영역 전체를 드래그 가능하게
+    >
+      <div style={{ WebkitAppRegion: "no-drag" }} className="ml-auto flex">
+        <button
+          onClick={() => window.electronAPI.minimize()}
+          className="px-4 hover:bg-gray-700"
+        >
+          –
+        </button>
+        <button
+          onClick={() => window.electronAPI.close()}
+          className="px-4 hover:bg-red-500"
+        >
+          ×
+        </button>
+      </div>
     </div>
   );
 }
