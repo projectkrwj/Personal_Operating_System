@@ -20,3 +20,14 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
+
+// Minimize와 Close 이벤트 처리
+ipcMain.on("window-minimize", (event) => {
+  const window = BrowserWindow.fromWebContents(event.sender);
+  window.minimize(); // 창 최소화
+});
+
+ipcMain.on("window-close", (event) => {
+  const window = BrowserWindow.fromWebContents(event.sender);
+  window.close(); // 창 닫기
+});
