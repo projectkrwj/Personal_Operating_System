@@ -4,7 +4,7 @@
   "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"npm:dev:react\" \"npm:dev:electron\"",
-    "dev:react": "vite --host",
+    "dev:react": "vite --host 0.0.0.0 --port 5173",
     "dev:electron": "wait-on http://localhost:5173 && electron .",
     "build": "vite build",
     "start": "electron ."
