@@ -1,8 +1,13 @@
 {
-  "name": "personal-os-ui",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
-  "features": {},
+  "name": "Electron React Dev",
+  "dockerFile": "Dockerfile",
   "postCreateCommand": "npm install",
-  "forwardPorts": [3000],
-  "remoteUser": "node"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
