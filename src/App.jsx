@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import SplashScreen from './SplashScreen';
-import Dashboard from './Dashboard';
+import React from 'react';
+import TitleBar from './components/TitleBar';
 
-export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
+function App() {
   return (
-    <div>
-      {showSplash ? <SplashScreen /> : <Dashboard />}
+    <div className="w-screen h-screen rounded-xl shadow-2xl overflow-hidden bg-gray-800">
+      <TitleBar />
+      <div className="flex-grow bg-gray-100">
+        {/* 다른 앱 내용 */}
+      </div>
     </div>
   );
 }
+
+export default App;
